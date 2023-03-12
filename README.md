@@ -4,7 +4,10 @@ Programa para processar dados de notas fiscais e retornar arquivos separados por
 
 ## Como Usar
 
-Abra o arquivo src/index.ts e edite a forma que você quer processar o arquivo.
+Coloque o arquivo de entrada na pasta `src/input/entrada.xlsx`;
+Os arquivos finais vão ser gerados na pasta `src/output/`;
+
+Abra o arquivo `src/index.ts` e edite a forma que você quer processar o arquivo.
 
 **pasta:** Nome da pasta onde os arquivos serão gerados </br>
 **numeroDasColunasParaIncluir:** Lista dos números das colunas a serem incluídas no processo </br>
