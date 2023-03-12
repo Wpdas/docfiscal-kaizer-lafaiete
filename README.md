@@ -6,6 +6,12 @@ Programa para processar dados de notas fiscais e retornar arquivos separados por
 
 Para rodar essa aplicação, você precisa instalar o **Node v16.0.0** e depois a dependência **Yarn**.
 
+Antes da primeira utilização, no terminal (CMD) vá para a pasta raíz do projeto e rode o comando:
+
+```st
+yarn install
+```
+
 1 - Coloque o arquivo de entrada na pasta `src/input/entrada.xlsx`; </br>
 2 - Os arquivos finais vão ser gerados na pasta `src/output/`; </br>
 3 - Abra o arquivo `src/index.ts` e edite a forma que você quer processar o arquivo; </br>
