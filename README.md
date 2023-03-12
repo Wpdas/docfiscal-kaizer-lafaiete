@@ -1,3 +1,7 @@
+### Sobre
+
+Programa para processar dados de notas fiscais e retornar arquivos separados por Base-numero, NFES, NFS, REC, RPA
+
 ## Como Usar
 
 Abra o arquivo src/index.ts e edite a forma que você quer processar o arquivo.

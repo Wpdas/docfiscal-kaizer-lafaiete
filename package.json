@@ -19,5 +19,8 @@
   "dependencies": {
     "read-excel-file": "^5.6.1",
     "xlsx": "^0.18.5"
+  },
+  "author": {
+    "name": "Wenderson Pires da Silva Gandos - https://www.linkedin.com/in/wenderson-pires-silva/"
   }
 }
