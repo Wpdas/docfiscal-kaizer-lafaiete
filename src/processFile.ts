@@ -3,8 +3,6 @@ import { Cell, Row } from "read-excel-file/types";
 import { getDocType } from "./utils/getDocType";
 import { saveFile } from "./saveFile";
 
-// principal, produto (vai sem filtro), imposto
-
 export const processFile = async (
   rows: Row[],
   folder: string,
