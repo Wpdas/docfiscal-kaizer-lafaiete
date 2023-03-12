@@ -1,4 +1,6 @@
 /build
-/input/**
-.DS_Store
+src/input/**
+src/output/**
+**/.DS_Store
 /node_modules
+yarn-error.log

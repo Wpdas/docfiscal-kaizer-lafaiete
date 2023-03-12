@@ -15,8 +15,6 @@ export const saveFile = async (
     data.push(newColumn);
   });
 
-  console.log(data);
-
   const workSheet = XLSX.utils.json_to_sheet(data);
   const workBook = XLSX.utils.book_new();
 
@@ -25,5 +23,4 @@ export const saveFile = async (
   XLSX.writeFile(workBook, outputDir);
 
   return true;
-  // return XLSX.writeFileAsync(outputDir, workBook, {});
 };

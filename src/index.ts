@@ -1,4 +1,24 @@
-import { readFile } from "./readFile";
+import { multiProcess } from "./multiProcess";
 
-// O Primeiro tem que ser sempre o tipo de documento (No Documento)
-readFile([17, 1, 2, 4, 11]);
+multiProcess([
+  {
+    pasta: "principal", // com filtro de duplicatas
+    numeroDasColunasParaIncluir: [17, 1, 15, 135],
+    filtro: {
+      colunaDeConhecimentoDeFreteDaNF: 15,
+      colunaCNPJcolumnNumber: 135,
+    },
+  },
+  {
+    pasta: "imposto", // com filtro de duplicatas
+    numeroDasColunasParaIncluir: [17, 1, 15, 135],
+    filtro: {
+      colunaDeConhecimentoDeFreteDaNF: 15,
+      colunaCNPJcolumnNumber: 135,
+    },
+  },
+  {
+    pasta: "produto", // sem filtro de duplicatas
+    numeroDasColunasParaIncluir: [17, 1, 15, 135],
+  },
+]);
