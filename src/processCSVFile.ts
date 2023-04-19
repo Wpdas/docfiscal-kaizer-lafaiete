@@ -38,7 +38,7 @@ export const processCSVFile = async (
   let columsNames: string[] = ["FIXO"];
 
   // Registra CNPJs + N Documento pra evitar duplicatas
-  let watchDuplicates: any = {};
+  const watchDuplicates: any = {};
 
   // Seleciona as colunas escolhidas no input
   const processNewData = (row: string[], index: number) => {
@@ -94,14 +94,9 @@ export const processCSVFile = async (
         const currentCNPJ = row[fixedCNPJcolumnNumber];
 
         // Pula se houver duplicata (usando dois campos como filtro, se existir igual, deixa apenas um registro)
-        if (
-          !watchDuplicates[
-            `${currentNumeroDeConhecimentoDeFreteDaNF}_${currentCNPJ}`
-          ]
-        ) {
-          watchDuplicates[
-            `${currentNumeroDeConhecimentoDeFreteDaNF}_${currentCNPJ}`
-          ] = [index, numeroDeConhecimentoDeFreteDaNF]; // Linha, Coluna do primeiro registro
+        const key = `${currentNumeroDeConhecimentoDeFreteDaNF}_${currentCNPJ}`;
+        if (!watchDuplicates[key]) {
+          watchDuplicates[key] = [index, numeroDeConhecimentoDeFreteDaNF]; // Linha, Coluna do primeiro registro
 
           rowData = processNewData(row, index);
         }
@@ -138,7 +133,4 @@ export const processCSVFile = async (
         );
       });
     });
-
-  // GC
-  watchDuplicates = null;
 };

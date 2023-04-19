@@ -1,6 +1,6 @@
-import { multiProcess } from "./multiProcess";
+import { multiProcessXLSX, multiProcessCSV } from "./multiProcess";
 
-multiProcess([
+multiProcessCSV([
   {
     pasta: "principal", // com filtro de duplicatas
     numeroDasColunasParaIncluir: [17, 1, 15, 135, 13],

@@ -14,32 +14,32 @@ type Input = {
 };
 
 // .CSV File
-// export const multiProcess = (input: Input[]) => {
-//   // Entrada do arquivo
-//   const inputDir = `${__dirname}/input/entrada.csv`;
+export const multiProcessCSV = (input: Input[]) => {
+  // Entrada do arquivo
+  const inputDir = `${__dirname}/input/entrada.csv`;
 
-//   let processCount = 0;
+  let processCount = 0;
 
-//   input.forEach(async (currentInput) => {
-//     await processCSVFile(
-//       inputDir,
-//       currentInput.pasta,
-//       currentInput.numeroDasColunasParaIncluir,
-//       currentInput.colunaNumeroDoc,
-//       currentInput.colunaSiteDeOrigem,
-//       currentInput.filtro?.colunaDeConhecimentoDeFreteDaNF,
-//       currentInput.filtro?.colunaCNPJcolumnNumber
-//     );
+  input.forEach(async (currentInput) => {
+    await processCSVFile(
+      inputDir,
+      currentInput.pasta,
+      currentInput.numeroDasColunasParaIncluir,
+      currentInput.colunaNumeroDoc,
+      currentInput.colunaSiteDeOrigem,
+      currentInput.filtro?.colunaDeConhecimentoDeFreteDaNF,
+      currentInput.filtro?.colunaCNPJcolumnNumber
+    );
 
-//     processCount++;
-//     if (processCount === input.length) {
-//       console.log("Processo finalizado!");
-//     }
-//   });
-// };
+    processCount++;
+    if (processCount === input.length) {
+      console.log("Processo finalizado!");
+    }
+  });
+};
 
 // .XLSX File
-export const multiProcess = (input: Input[]) => {
+export const multiProcessXLSX = (input: Input[]) => {
   // Entrada do arquivo
   const inputDir = `${__dirname}/input/entrada.xlsx`;
 

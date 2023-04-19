@@ -126,7 +126,4 @@ export const processXLSXFile = async (
   Object.keys(filesData).forEach(async (fileName) => {
     await saveFile(filesData[fileName], columsNames, `${folder}/${fileName}`);
   });
-
-  // GC
-  watchDuplicates = null;
 };
