@@ -1,6 +1,6 @@
 # Sobre
 
-Programa para processar dados de notas fiscais e retornar arquivos separados por Base-numero, NFES, NFS, REC, RPA
+Programa para processar dados de notas fiscais e retornar arquivos separados por Base-numero, NFES, NFS, REC, RPA, outros
 
 ## Como Usar
 
@@ -12,10 +12,11 @@ Antes da primeira utilização, no terminal (CMD) vá para a pasta raíz do proj
 yarn install
 ```
 
-1 - Coloque o arquivo de entrada na pasta `src/input/entrada.xlsx`; </br>
-2 - Os arquivos finais vão ser gerados na pasta `src/output/`; </br>
-3 - Abra o arquivo `src/index.ts` e edite a forma que você quer processar o arquivo; </br>
-4 - No terminal (CMD), vá para o diretório raíz do projeto e rode o seguinte comando:
+1 - Arquivos suportados: .xlsx e .csv
+2 - Coloque o arquivo de entrada na pasta `src/input/entrada.xlsx`; </br>
+3 - Os arquivos finais vão ser gerados na pasta `src/output/`; </br>
+4 - Abra o arquivo `src/index.ts` e edite a forma que você quer processar o arquivo; </br>
+5 - No terminal (CMD), vá para o diretório raíz do projeto e rode o seguinte comando:
 
 ```sh
 yarn execute
@@ -35,12 +36,14 @@ filtro: {
 Exemplo de multiplos processos:
 
 ```js
-import { multiProcess } from "./multiProcess";
+import { multiProcessXLSX, multiProcessCSV } from "./multiProcess";
 
-multiProcess([
+multiProcessCSV([
   {
     pasta: "principal", // com filtro de duplicatas
-    numeroDasColunasParaIncluir: [17, 1, 15, 135],
+    numeroDasColunasParaIncluir: [17, 1, 15, 135, 13],
+    colunaNumeroDoc: 17,
+    colunaSiteDeOrigem: 13,
     filtro: {
       colunaDeConhecimentoDeFreteDaNF: 15,
       colunaCNPJcolumnNumber: 135,
@@ -48,7 +51,9 @@ multiProcess([
   },
   {
     pasta: "imposto", // com filtro de duplicatas
-    numeroDasColunasParaIncluir: [17, 1, 15, 135],
+    numeroDasColunasParaIncluir: [17, 1, 15, 135, 13],
+    colunaNumeroDoc: 17,
+    colunaSiteDeOrigem: 13,
     filtro: {
       colunaDeConhecimentoDeFreteDaNF: 15,
       colunaCNPJcolumnNumber: 135,
@@ -56,7 +61,9 @@ multiProcess([
   },
   {
     pasta: "produto", // sem filtro de duplicatas
-    numeroDasColunasParaIncluir: [17, 1, 15, 135],
+    numeroDasColunasParaIncluir: [17, 1, 15, 135, 13],
+    colunaNumeroDoc: 17,
+    colunaSiteDeOrigem: 13,
   },
 ]);
 ```
