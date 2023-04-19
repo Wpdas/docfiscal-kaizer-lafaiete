@@ -18,8 +18,6 @@ export const multiProcessCSV = (input: Input[]) => {
   // Entrada do arquivo
   const inputDir = `${__dirname}/input/entrada.csv`;
 
-  let processCount = 0;
-
   input.forEach(async (currentInput) => {
     await processCSVFile(
       inputDir,
@@ -30,11 +28,6 @@ export const multiProcessCSV = (input: Input[]) => {
       currentInput.filtro?.colunaDeConhecimentoDeFreteDaNF,
       currentInput.filtro?.colunaCNPJcolumnNumber
     );
-
-    processCount++;
-    if (processCount === input.length) {
-      console.log("Processo finalizado!");
-    }
   });
 };
 
