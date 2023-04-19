@@ -12,7 +12,7 @@ Antes da primeira utilização, no terminal (CMD) vá para a pasta raíz do proj
 yarn install
 ```
 
-1 - Arquivos suportados: .xlsx e .csv
+1 - Arquivos suportados: `.xlsx` e `.csv`; </br>
 2 - Coloque o arquivo de entrada na pasta `src/input/entrada.xlsx`; </br>
 3 - Os arquivos finais vão ser gerados na pasta `src/output/`; </br>
 4 - Abra o arquivo `src/index.ts` e edite a forma que você quer processar o arquivo; </br>
